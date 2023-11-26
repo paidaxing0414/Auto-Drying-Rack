@@ -44,7 +44,7 @@ const char* apiKey = "z81Tzmwb14JThgmf2ijfpmkCVvdN4ZMQ";
 const char* endpoint = "https://dataservice.accuweather.com/forecasts/v1/hourly/12hour/228037";//"http://192.168.50.90:8090/228037.json";
 
 LiquidCrystal_I2C lcd(0x27,20,4);
-const int threshold = 4000; // 阈值
+const int threshold = 3500; // 阈值
 const unsigned long requiredDuration = 3000; // 三秒
 unsigned long startTime = 0;
 unsigned long currentTime = 0;
@@ -88,6 +88,7 @@ void setup() {
     pinMode(5, OUTPUT);
     pinMode(18, OUTPUT);
     digitalWrite(18, LOW);
+    Serial.println(analogRead(32));
     
     //ledcSetup(0, pwmFreq, pwmResolution);
     //ledcSetup(1, pwmFreq, pwmResolution);
@@ -101,12 +102,12 @@ void setup() {
     // 初始化其他设置
 
 
-bool camera = true;
+bool camera = false;
 bool campwr = false;
 bool wifi = false;
 bool serveron = false;
 bool rainsensor = true;
-volatile bool motortrue = false;
+bool motortrue = false;
 bool reverseMotor = false;
 
 

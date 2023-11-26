@@ -109,7 +109,7 @@ const char INDEX_HTML[] PROGMEM = R"=====(
 
     controlButton.addEventListener('click', function() {
         // 构建控制URL
-        var controlUrl = "http://" + videoStreamIp + "/control?var=framesize&val=7";
+        var controlUrl = "http://" + videoStreamIp + "/control?var=framesize&val=9";
 
         // 发送HTTP请求
         var xhr = new XMLHttpRequest();
